@@ -1,6 +1,6 @@
 .main-box {
   background-color: #d5e0ef;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,15 +8,15 @@
 
 .outer-box {
   background-color: white;
-  width: 250px;
-  height: 390px;
+  max-width: 16rem;
+  min-height: 25rem;
   border-radius: 14px;
   text-align: center;
 }
 
 img {
-  width: 220px;
-  height: 200px;
+  max-width: 220px;
+  min-height: 200px;
   padding: 15px;
   border-radius: 30px;
 }
@@ -25,14 +25,15 @@ img {
   padding-right: 20px;
 }
 h5 {
-  font-size: 15px;
-  padding-bottom: 15px;
+  font-size: 17px;
+  padding-bottom: 1rem;
   margin: 0px;
 }
 p {
   font-size: 12px;
   display: block;
   align-self: center;
+  padding-bottom: 2rem;
 
   margin: 0px;
 }
