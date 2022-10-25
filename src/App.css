@@ -1,39 +1,41 @@
-.main-box {
-  background-color: #d5e0ef;
-  min-height: 100vh;
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+}
+
+@font-face {
+  font-family: InterRegular;
+  src: url(./assets/fonts/static/Inter-Regular.ttf);
+}
+
+.navcontainer {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  margin: 5% 5% 0% 5%;
+}
+.navleft {
+  flex: 50%;
+  display: flex;
+}
+
+.navright {
+  flex: 50%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.outer-box {
-  background-color: white;
-  max-width: 16rem;
-  min-height: 25rem;
-  border-radius: 14px;
-  text-align: center;
+.navright a {
+  text-decoration: none;
+  color: grey;
+  font-family: InterRegular;
+  font-size: small;
 }
 
-img {
-  max-width: 220px;
-  min-height: 200px;
-  padding: 15px;
-  border-radius: 30px;
-}
-.textField {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-h5 {
-  font-size: 17px;
-  padding-bottom: 1rem;
-  margin: 0px;
-}
-p {
-  font-size: 12px;
-  display: block;
-  align-self: center;
-  padding-bottom: 2rem;
-
-  margin: 0px;
+a:hover {
+  color: var(--soft-red);
 }
