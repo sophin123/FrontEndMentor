@@ -1,41 +1,264 @@
-* {
-  box-sizing: border-box;
-  margin: 0px;
-}
-:root {
-  --soft-orange: hsl(35, 77%, 62%);
-  --soft-red: hsl(5, 85%, 63%);
-}
-
+/* Font choose */
 @font-face {
   font-family: InterRegular;
   src: url(./assets/fonts/static/Inter-Regular.ttf);
 }
 
+@font-face {
+  font-family: InterRegularExtraBold;
+  src: url(./assets/fonts/static/Inter-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: InterRegularBold;
+  src: url(./assets/fonts/static/Inter-Bold.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+/* navbar css */
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+}
+
+.maincontainer {
+  margin: 5% 10% 0% 10%;
+}
+
 .navcontainer {
   display: flex;
   flex-direction: row;
-  margin: 5% 5% 0% 5%;
 }
 .navleft {
-  flex: 50%;
+  flex: 10%;
   display: flex;
 }
 
 .navright {
-  flex: 50%;
+  flex: 90%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .navright a {
   text-decoration: none;
   color: grey;
   font-family: InterRegular;
-  font-size: small;
+  font-size: 1.3vw;
+  margin-left: 5%;
 }
 
 a:hover {
   color: var(--soft-red);
+}
+
+/* side nav */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 140px;
+}
+
+.sidenav .crossline {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.sidenav a {
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  font-family: InterRegular;
+  opacity: 0.8;
+}
+
+/* content css */
+
+/* --------------------- */
+/* content left css */
+.contentcontainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+}
+
+.contentleft {
+  flex: 75%;
+  /* background-color: red; */
+  padding-right: 40px;
+}
+
+.contentright {
+  flex: 35%;
+  padding-right: 30px;
+}
+
+.contentbottom {
+  display: flex;
+  flex-direction: row;
+  padding-top: 3%;
+}
+
+.contentbottom .contentbottomleft {
+  flex: 50%;
+  font-family: InterRegularExtraBold;
+  font-size: 25px;
+  padding-right: 6%;
+  line-height: 200%;
+}
+
+.contentbottom .contentbottomright {
+  flex: 50%;
+}
+
+.contentbottom .contentbottomright p {
+  opacity: 0.5;
+  font-family: InterRegular;
+  font-size: 14px;
+  line-height: 155%;
+  text-align: left;
+  padding-right: 10px;
+}
+
+input[type="button"] {
+  background-color: black;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-family: InterRegularBold;
+  letter-spacing: 4px;
+  margin-top: 20px;
+}
+
+input[type="button"]:hover {
+  cursor: pointer;
+}
+
+.newscard h2:hover {
+  cursor: pointer;
+  color: var(--soft-orange);
+}
+
+/* --------------------- */
+/* content right css */
+.contentright {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+.title {
+  color: var(--soft-orange);
+  font-family: InterRegularBold;
+}
+
+.newscard {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.newscard h2 {
+  font-size: 20px;
+  line-height: 200%;
+  font-family: InterRegularBold;
+}
+
+.newscard p {
+  opacity: 0.75;
+  font-size: 15px;
+  line-height: 140%;
+  font-family: InterRegular;
+}
+
+/* --------------------- */
+/* content bottom css */
+.bottomcontent {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.bottomcard {
+  display: flex;
+  flex-direction: row;
+}
+.leftbottomcard {
+  padding-right: 25px;
+}
+
+.rightbottomcard {
+  width: 190px;
+  margin-right: 25px;
+}
+
+.rightbottomcard h1 {
+  opacity: 0.2;
+  font-family: InterRegularBold;
+  margin-bottom: 8px;
+  font-size: 26px;
+}
+
+.rightbottomcard h4 {
+  font-size: 16px;
+  font-family: InterRegularBold;
+  margin-bottom: 8px;
+}
+
+.rightbottomcard p {
+  opacity: 0.6;
+  font-size: 13px;
+  line-height: 140%;
+  font-family: InterRegular;
+}
+
+.rightbottomcard h4:hover {
+  color: var(--soft-orange);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 375px) {
+  .maincontainer {
+    margin: 10px;
+  }
+  .navcontainer {
+    align-items: center;
+  }
+  .contentcontainer,
+  .bottomcontent,
+  .contentbottom {
+    flex-direction: column;
+  }
+  .contentleft {
+    padding: 0;
+  }
+  input[type="button"] {
+    background-color: var(--soft-red);
+    border: none;
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .navright a {
+    font-size: 2.5vw;
+  }
 }
